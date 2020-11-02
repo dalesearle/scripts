@@ -26,3 +26,4 @@ for i in $(find $DEVDIR -name ".git" -exec dirname {} \;); do
 done
 
 find . -name "build.gradle.kts" -print -exec sed -i '' -e 's/com.my1040ez:mef_client_sdk_10.1:10.1/com.my1040ez:mef_client_sdk:11.0/g' {} \;
+find . -name 'build.gradle.kts' -print -exec grep -i 'mef' {} \; -print
