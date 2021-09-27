@@ -24,6 +24,8 @@ alias r3stop="rabbitmqctl -n rabbit3 shutdown --no-wait"
 alias rctl="rabbitmqctl"
 alias scsqs="jps | grep \"CSQService\" | cut -d \" \" -f 1 | xargs -I{} kill {}"
 alias gettag="~/development/scripts/gettag.sh ~/development/2021/th2021"
+alias tag="git fetch ; git tag --sort=committerdate | tail -1"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

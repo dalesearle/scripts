@@ -2,4 +2,4 @@
 
 cd $1
 git fetch
-git describe --tags
+git tag --sort=committerdate | tail -1
