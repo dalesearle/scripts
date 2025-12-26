@@ -8,7 +8,7 @@ for i in $(find $DEVDIR -name ".git" -exec dirname {} \;); do
   cd $i
   BRANCH=$(git branch --show-current)
   echo "Checking \e[1;33m$i\e[0m, currently on branch \e[1;33m$BRANCH\e[0m"
-  if [[ ! $BRANCH =~ ^test.* && $BRANCH != "master" && $BRANCH != "main" ]]; then
+  if [[ ! $BRANCH =~ ^(20|main|master|test) ]]; then
     echo "\t\e[1;31mSkipped\e[0m -  Unsupported branch"
     continue
   fi
