@@ -7,8 +7,8 @@ echo "\e[1;33mChecking all repos in directory: $DEVDIR\e[0m"
 for i in $(find $DEVDIR -name ".git" -exec dirname {} \;); do
   cd $i
   BRANCH=$(git branch --show-current)
-  echo "Checking \e[1;33m$(basename $i)\e[0m, currently on branch \e[1;33m$BRANCH\e[0m"
-  if [[ $BRANCH != "test" && $BRANCH != "master" && $BRANCH != "main" ]]; then
+  echo "Checking \e[1;33m$i\e[0m, currently on branch \e[1;33m$BRANCH\e[0m"
+  if [[ ! $BRANCH =~ ^test.* && $BRANCH != "master" && $BRANCH != "main" ]]; then
     echo "\t\e[1;31mSkipped\e[0m -  Unsupported branch"
     continue
   fi
